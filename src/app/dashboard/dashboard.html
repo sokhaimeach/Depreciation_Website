@@ -1,0 +1,64 @@
+<div [class]="theme()">
+    <!-- <nav class="navbar">
+        <div class="left-nav">
+            <i class="bi bi-list"></i>
+        </div>
+        <div class="right-nav">
+            <i class="bi bi-stopwatch blue-icon"></i>
+            <i class="bi bi-chat-left-dots blue-icon"></i>
+            <i class="bi bi-gear-fill"></i>
+        </div>
+    </nav> -->
+
+    <div class="body">
+        <div class="account">
+            <div class="left-acc">
+                <div class="img-acc">
+                    <img src="images/profile.jpg" alt="" style="width: 40px; object-fit: cover;">
+                </div>
+                <span>Sokhai company</span>
+            </div>
+            <div class="right-acc">
+                <div>
+                    <i class="bi bi-qr-code-scan"></i>
+                </div>
+                <div class="animateGear">
+                    <i class="bi bi-gear" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight"
+                        aria-controls="offcanvasRight"></i>
+                </div>
+            </div>
+        </div>
+        <span class="text-bold">Hello, user</span>
+        <span>ID : 1234567886</span>
+        <div class="option-list">
+            @for(list of lists; track $index){
+            <div class="option-box" [id]="'box' + list.id" [routerLink]="list.link">
+                <i [class]="list.icon"></i>
+                <span>{{list.title}}</span>
+            </div>
+            }
+        </div>
+    </div>
+
+
+    <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+        <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="offcanvasRightLabel">Settings</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+            <!-- From Uiverse.io by Safvan-tsy -->
+            <div class="radio-inputs">
+                <label class="radio" (click)="switchLanguage('en')">
+                    <input checked="" name="auth" type="radio" />
+                    <span class="radio-item">English</span>
+                </label>
+                <label class="radio" (click)="switchLanguage('km')">
+                    <input name="auth" type="radio" />
+                    <span class="radio-item">Khmer</span>
+                </label>
+            </div>
+            <button (click)="toggleTheme()" style="z-index: 100;">Mode</button>
+        </div>
+    </div>
+</div>

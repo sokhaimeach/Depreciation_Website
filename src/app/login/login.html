@@ -1,0 +1,53 @@
+<div class="container1">
+    <div class="back-img"></div>
+    <span class="wrong-pass" [style.display]="iswrong">wrong password, please try again</span>
+    <div class="profile">
+        <div class="image">
+            <img src="images/profile.jpg" alt="">
+        </div>
+        <span>Meach Sokhai</span>
+        <span>012 3456 778</span>
+    </div>
+    <div class="check-pass">
+        <div class="checked" [style.background-color]="checked[0]"></div>
+        <span class="checked" [style.background-color]="checked[1]"></span>
+        <span class="checked" [style.background-color]="checked[2]"></span>
+        <span class="checked" [style.background-color]="checked[3]"></span>
+        <span class="checked" [style.background-color]="checked[4]"></span>
+        <span class="checked" [style.background-color]="checked[5]"></span>
+    </div>
+    <div class="pass-btn">
+        <div class="row">
+            <button (click)="combineString('1')">1</button>
+            <button (click)="combineString('2')">2</button>
+            <button (click)="combineString('3')">3</button>
+        </div>
+        <div class="row">
+            <button (click)="combineString('4')">4</button>
+            <button (click)="combineString('5')">5</button>
+            <button (click)="combineString('6')">6</button>
+        </div>
+        <div class="row">
+            <button (click)="combineString('7')">7</button>
+            <button (click)="combineString('8')">8</button>
+            <button (click)="combineString('9')">9</button>
+        </div>
+        <div class="row">
+            <button class="clear" (click)="clearPassword()">Cl</button>
+            <button (click)="combineString('0')">0</button>
+            <button class="clear" (click)="deletePass()">Del</button>
+        </div>
+    </div>
+    <div class="footer">
+        <span>ភ្លេចលេខសម្ងាត់</span>
+        <span class="lost">បោះបង់</span>
+    </div>
+</div>
+
+<section class="dots-container" [style.display]="load">
+  <div class="dot"></div>
+  <div class="dot"></div>
+  <div class="dot"></div>
+  <div class="dot"></div>
+  <div class="dot"></div>
+</section>

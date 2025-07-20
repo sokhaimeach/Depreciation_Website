@@ -1,0 +1,37 @@
+/* card */
+.card-icon {
+    font-size: 30px;
+}
+.size {
+    font-size: 30px;
+}
+.collapses {
+    width: fit-content;
+    height: 50px;
+    padding: 0 10px;
+    border: 1px solid black;
+    border-radius: 5px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    background-color: rgb(220, 255, 220);
+}
+.btn-edit {
+    background-color: rgb(173, 255, 173);
+    border: 2px solid rgb(0, 107, 5);
+    height: 30px;
+}
+
+/* table */
+.tbl-header th{
+    background-color: rgb(95, 95, 255);
+}
+.no-bg{
+    background-color: transparent;
+}
+.tbl-body tr:nth-of-type(odd){
+    background-color: rgb(255, 255, 255);
+}
+.tbl-body tr:nth-of-type(even){
+    background-color: rgb(196, 196, 255);
+    background-color: #9797ff;
+}

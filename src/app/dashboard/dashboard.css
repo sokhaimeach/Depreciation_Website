@@ -1,0 +1,247 @@
+/* ######## start nav ############## */
+.navbar {
+    position: relative;
+    top: 0px;
+    width: 100%;
+    height: 50px;
+    padding: 0px 25px;
+    box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.128);
+    z-index: 1000;
+}
+
+.navbar i {
+    font-size: 25px;
+}
+
+.right-nav i {
+    margin-left: 20px;
+}
+
+.blue-icon {
+    color: rgb(79, 79, 255);
+}
+
+/* ############## start body ############### */
+.body {
+    position: relative;
+    top: 20px;
+    display: flex;
+    flex-direction: column;
+    padding: 0px 40px;
+}
+
+.account {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.left-acc {
+    display: flex;
+    align-items: center;
+}
+
+.left-acc span {
+    margin-left: 20px;
+}
+
+.img-acc {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.img-acc img {
+    height: 40px;
+}
+
+.right-acc {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.right-acc div {
+    margin-left: 20px;
+}
+
+.right-acc div i {
+    font-size: 25px;
+}
+
+.animateGear {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    transform: rotate(0deg);
+    transition: all 0.5s ease-in-out;
+}
+
+.animateGear:hover {
+    transform: rotate(180deg);
+}
+
+.text-bold {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+
+.option-list {
+    display: grid;
+    grid-template-rows: 120px 120px 60px;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    width: 100%;
+    margin-top: 20px;
+    gap: 20px;
+    transition: all 0.2s ease;
+    margin-top: 30px;
+}
+
+#box1 {
+    grid-column: 1 / 3;
+}
+
+#box2 {
+    grid-column: 3 / 5;
+}
+
+#box3 {
+    grid-column: 5 / 7;
+}
+
+#box4 {
+    grid-column: 1 / 3;
+}
+
+#box5 {
+    grid-column: 3 / 5;
+}
+
+#box6 {
+    grid-column: 5 / 7;
+}
+
+#box7 {
+    grid-column: 1 / 4;
+    flex-direction: row;
+    gap: 10px;
+}
+
+#box8 {
+    grid-column: 4 / 7;
+    flex-direction: row;
+    gap: 10px;
+}
+
+.option-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-left: 6px solid rgb(131, 131, 255);
+    border-radius: 10px;
+    box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.128);
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.option-box:hover {
+    transition: all 0.1s ease;
+    transform: scale(1.02);
+    box-shadow: 0 0 20px 10px rgba(0, 0, 0, 0.142);
+}
+
+.option-box:active {
+    transition: all 0.1s ease;
+    transform: scale(1);
+}
+
+.option-box i {
+    font-size: 35px;
+    transition: all 0.2s ease;
+}
+
+@media (max-width: 600px) {
+    .option-list {
+        grid-template-rows: 90px 90px 50px;
+        gap: 15px;
+    }
+    .option-box i {
+    font-size: 23px;
+    }
+    .option-box span {
+        font-size: 12px;
+    }
+}
+
+
+
+
+/* From Uiverse.io by Safvan-tsy */ 
+.radio-inputs {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  border-radius: 4px;
+  background-color: black;
+  box-sizing: border-box;
+  padding: 0.25rem;
+  width: 340px;
+  font-size: 14px;
+  height: 46px;
+  transition: clip-path 0.3s ease;
+}
+
+.radio-inputs .radio {
+  flex: 1 1 auto;
+  text-align: center;
+}
+
+.radio-inputs .radio input {
+  display: none;
+}
+
+.radio-inputs .radio .radio-item {
+  display: flex;
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+  border: none;
+  padding: 0.5rem 0;
+  color: #c2c1be;
+  transition:
+    background-color 0.5s ease,
+    font-weight 0.5s ease;
+}
+
+.radio-inputs input:checked ~ .radio-item {
+  background-color: #4d4a45;
+  font-weight: 600;
+  color: #fff;
+}
+
+.radio-inputs input:checked ~ .radio {
+  clip-path: polygon(0% 0%, 100% 0%, 90% 100%, 10% 100%);
+}
+
+
+.darkMode {
+    background-color: var(--bg-dark);
+    color: var(--txt-light);
+    /* width: 100%; */
+    height: 100vh;
+}
+
+.lightMode {
+    background-color: var(--bg-light);
+    color: var(--txt-dark);
+    height: 100vh;
+    /* width: 100%; */
+}

@@ -1,1 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
+:root {
+    --bg-dark: rgb(43, 43, 43);
+    --bg-light: rgb(244, 244, 255);
+    --txt-light: white;
+    --txt-dark: black;
+}
