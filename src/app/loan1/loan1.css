@@ -52,6 +52,12 @@
 .txt-margin {
     margin-top: 0px !important;
 }
+.card-width1 {
+    width: 80% !important;
+}
+.card-width2 {
+    width: 20% !important;
+}
 table {
     margin-bottom: 100px !important;
 }
