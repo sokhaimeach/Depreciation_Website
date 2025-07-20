@@ -7,7 +7,7 @@
 }
 .collapses {
     width: fit-content;
-    height: 50px;
+    height: 65px;
     padding: 0 10px;
     border: 1px solid black;
     border-radius: 5px;
@@ -34,4 +34,25 @@
 .tbl-body tr:nth-of-type(even){
     background-color: rgb(196, 196, 255);
     background-color: #9797ff;
+}
+
+@media (max-width: 600px) {
+    .card-icon {
+    font-size: 20px;
+}
+.size {
+    font-size: 20px;
+}
+.tbl-header th tr {
+    font-size: 14px;
+}
+.tbl-body tr td {
+    font-size: 14px;
+}
+.txt-margin {
+    margin-top: 0px !important;
+}
+table {
+    margin-bottom: 100px !important;
+}
 }
