@@ -1,15 +1,14 @@
 import { CommonModule } from '@angular/common';
-import { Component, signal, effect } from '@angular/core';
+import { Component, signal } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 
 @Component({
-  selector: 'app-loan1',
+  selector: 'app-loan2',
   imports: [FormsModule, CommonModule],
-  templateUrl: './loan1.html',
-  styleUrl: './loan1.css'
+  templateUrl: '../loan1/loan1.html',
+  styleUrl: '../loan1/loan1.css'
 })
-export class Loan1 {
-
+export class Loan2 {
   principal: number = 2000;
   interestRate: number = 2;
   duration: number = 10;
@@ -22,22 +21,23 @@ export class Loan1 {
   }
 
   // design path
+  
   data = [
-    { name: 'Principal', value: this.principal, color: '#ffa9a9', icon: 'bi bi-currency-dollar' },
-    { name: 'Interest Rate', value: this.interestRate, color: '#9797ff', icon: 'bi bi-percent' },
-    { name: 'Duration', value: this.duration, color: '#85ff83', icon: 'bi bi-calendar' },
-    { name: 'Date', value: this.date, color: '#ee97ff', icon: 'bi bi-calendar-date' }
+    { name: 'Principal', value: this.principal, color: '#ff9a9aff', icon: 'bi bi-currency-dollar' },
+    { name: 'Interest Rate', value: this.interestRate, color: '#ce97ffff', icon: 'bi bi-percent' },
+    { name: 'Duration', value: this.duration, color: '#8583ffff', icon: 'bi bi-calendar' },
+    { name: 'Date', value: this.date, color: '#ff91c3ff', icon: 'bi bi-calendar-date' }
   ];
 
   height = signal('50px');
   toggleHeight() {
     this.height.set(this.height() === '50px' ? '300px' : '50px');
   }
-  header_color:string = 'rgb(95, 95, 255)';
+  header_color:string = '#ff6161ff';
   sub_tbl_color() {
     let arrcolor = [];
     for(let i=0;i<this.duration;i++){
-      arrcolor[i] = i%2==0? 'rgb(255, 255, 255)': '#9797ff';
+      arrcolor[i] = i%2==0? 'white': '#ffb4b4ff';
     }
     return arrcolor;
   }
@@ -48,7 +48,7 @@ export class Loan1 {
   loan: any[] = [];
   calculate() {
     const principal = this.principal / this.duration;
-    const monthlyInterest = this.principal * this.interestRate / 100;
+    let newprincipal = this.principal;
     const duration = this.duration;
     const increseDate = this.date.split('-');
 
@@ -61,6 +61,8 @@ export class Loan1 {
       year = month > 12 ? year + 1 : year;
       month = month > 12 ? 1 : month;
 
+      let monthlyInterest = newprincipal * this.interestRate / 100;
+
       this.loan[i] = {
         prin: principal,
         inter: monthlyInterest,
@@ -68,6 +70,7 @@ export class Loan1 {
         total: principal + monthlyInterest,
         date: `${year}-${month}-${day}`
       };
+      newprincipal-=principal;
     }
     this.totalLoan = this.loan.reduce((sum, loan) => sum + loan.total, 0);
     this.totalInterest = this.totalLoan - this.principal;

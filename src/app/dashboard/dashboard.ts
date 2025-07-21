@@ -13,9 +13,9 @@ export class Dashboard {
     this.changeLanguage();
   }
   lists = [
-    {id: 1, title: 'Couses', icon: 'bi bi-currency-dollar'},
-    {id: 2, title: 'Schedule', icon: 'bi bi-coin'},
-    {id: 3, title: 'Attendent', icon: 'bi bi-cash-coin'},
+    {id: 1, title: 'Loan fix', icon: 'bi bi-currency-dollar', link: '/menu/loan1'},
+    {id: 2, title: 'Loan fix principal', icon: 'bi bi-coin', link: '/menu/loan2'},
+    {id: 3, title: 'Loan fix principal 3m', icon: 'bi bi-cash-coin', link: '/menu/loan3'},
     {id: 4, title: 'Scores', icon: 'bi bi-journal-album'},
     {id: 5, title: 'Teachers', icon: 'bi bi-person-workspace'},
     {id: 6, title: 'Class', icon: 'bi bi-buildings'},
@@ -46,8 +46,8 @@ export class Dashboard {
   }
   changeLanguage() {
     const translation = {
-      en: ['Couses', 'Schedule','Attendent','Scores','Teachers','Class','Account','Loign'],
-      km: ['មេរៀន', 'កាលវិភាគ','វត្តមាន','ពិន្ទុ','គ្រូបង្រៀន','ថ្នាក់','គណនី','ចូលទៅ']
+      en: ['Loan fix', 'Loan fix principal','Loan principal 3m','Scores','Teachers','Class','Account','Loign'],
+      km: ['ការប្រាក់ថេរ', 'ការប្រាក់ថយ','រំលោះ៣ខែម្ដង','ពិន្ទុ','គ្រូបង្រៀន','ថ្នាក់','គណនី','ចូលទៅ']
     }
 
     translation[this.currentLanguage].map((text, index) => {

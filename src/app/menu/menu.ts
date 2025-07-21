@@ -11,8 +11,8 @@ export class Menu {
   links = [
     {link: '/menu/dashboard', title: 'Home', icon: 'bi bi-house'},
     {link: '/menu/loan1', title: 'Loan1', icon: 'bi bi-currency-dollar'},
-    {link: '/menu/dashboard', title: 'Loan2', icon: 'bi bi-coin'},
-    {link: '/menu/dashboard', title: 'Loan3', icon: 'bi bi-cash-coin'},
+    {link: '/menu/loan2', title: 'Loan2', icon: 'bi bi-coin'},
+    {link: '/menu/loan3', title: 'Loan3', icon: 'bi bi-cash-coin'},
     {link: '/menu/dashboard', title: 'Description', icon: 'bi bi-journal-album'},
     {link: '/menu/dashboard', title: 'Dashboard', icon: 'bi bi-person-workspace'},
     {link: '/menu/dashboard', title: 'Dashboard', icon: 'bi bi-buildings'},
@@ -34,13 +34,19 @@ export class Menu {
       this.col_data.set('col-9 show-data');
       this.menu_display.set('flex');
     }
-    console.log(this.col_update(), " | ", this.col_data());
   }
 
-  activeLink: string[] = ['active'];
+  
+  activeLink:string[] = [];
+  constructor() {
+    try{
+      this.activeLink = JSON.parse(sessionStorage.getItem('setActiveStatus') || "[]") || [];
+    } catch{}
+  }
   Active(index: number) {
     this.activeLink = [];
     this.activeLink[index] = 'active';
+    sessionStorage.setItem('setActiveStatus', JSON.stringify(this.activeLink));
   }
 
   resizeHeight = signal('70px');

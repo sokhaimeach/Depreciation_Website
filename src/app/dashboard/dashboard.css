@@ -168,6 +168,9 @@
 }
 
 @media (max-width: 600px) {
+    .body {
+        padding: 0px 10px;
+    }
     .option-list {
         grid-template-rows: 90px 90px 50px;
         gap: 15px;

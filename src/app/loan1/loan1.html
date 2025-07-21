@@ -52,17 +52,17 @@
 
     <table class="table table-striped table-hover animate__animated animate__fadeInUp">
         <thead>
-            <tr class="tbl-header">
-                <th scope="col">No</th>
-                <th scope="col">Principal</th>
-                <th scope="col">Interest</th>
-                <th scope="col">Total</th>
-                <th scope="col">Date</th>
+            <tr>
+                <th [style.background-color]="header_color" scope="col">No</th>
+                <th [style.background-color]="header_color" scope="col">Principal</th>
+                <th [style.background-color]="header_color" scope="col">Interest</th>
+                <th [style.background-color]="header_color" scope="col">Total</th>
+                <th [style.background-color]="header_color" scope="col">Date</th>
             </tr>
         </thead>
         <tbody class="tbl-body">
             @for(item of loan; track $index) {
-            <tr>
+            <tr [style.background-color]="sub_tbl_color()[$index]">
                 <th class="no-bg" scope="row">{{$index + 1}}</th>
                 <td class="no-bg">{{item.prin | currency}}</td>
                 <td class="no-bg">{{item.inter | currency}}</td>
