@@ -36,6 +36,21 @@
     background-color: #9797ff;
 }
 
+/* total */
+.box-size {
+    width: 49%;
+    margin-top: 10px;
+    transition: width 0.3s ease;
+}
+
+
+
+@media (max-width: 1130px) {
+    .box-size {
+        width: 100%;
+    }
+}
+
 @media (max-width: 600px) {
     .card-icon {
     font-size: 20px;

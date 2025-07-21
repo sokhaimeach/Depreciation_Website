@@ -10,10 +10,12 @@ import { FormsModule } from '@angular/forms';
 })
 export class Loan1 {
 
-  principal = 2000;
-  interestRate = 2;
-  duration = 10;
-  date = '2023-01-01';
+  principal: number = 2000;
+  interestRate: number = 2;
+  duration: number = 10;
+  date: string = '2023-01-01';
+  totalLoan: number = 0;
+  totalInterest: number = 0;
 
   constructor() {
     this.calculate();
@@ -55,9 +57,13 @@ export class Loan1 {
         prin: principal,
         inter: monthlyInterest,
         durat: duration,
+        total: principal + monthlyInterest,
         date: `${year}-${month}-${day}`
       };
     }
+    this.totalLoan = this.loan.reduce((sum, loan) => sum + loan.total, 0);
+    this.totalInterest = this.totalLoan - this.principal;
+    console.log(`total loan: ${this.totalLoan}, total enter: ${this.totalInterest}`);
   }
 
   getPrincial: string = '';

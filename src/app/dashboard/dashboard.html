@@ -11,7 +11,7 @@
     </nav> -->
 
     <div class="body">
-        <div class="account">
+        <div class="account animate__animated animate__fadeInDown">
             <div class="left-acc">
                 <div class="img-acc">
                     <img src="images/profile.jpg" alt="" style="width: 40px; object-fit: cover;">
@@ -28,11 +28,11 @@
                 </div>
             </div>
         </div>
-        <span class="text-bold">Hello, user</span>
-        <span>ID : 1234567886</span>
+        <span class="text-bold animate__animated animate__fadeInUp">Hello, user</span>
+        <span class="animate__animated animate__fadeInUp">ID : 1234567886</span>
         <div class="option-list">
             @for(list of lists; track $index){
-            <div class="option-box" [id]="'box' + list.id" [routerLink]="list.link">
+            <div class="option-box animate__animated animate__fadeInUp" [id]="'box' + list.id" [routerLink]="list.link">
                 <i [class]="list.icon"></i>
                 <span>{{list.title}}</span>
             </div>
