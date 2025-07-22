@@ -1,3 +1,19 @@
+:root {
+  --bg-dark: #121212;
+  --bg-light: #ffffff;
+  --txt-light: #ffffff;
+  --txt-dark: #000000;
+}
+
+.darkMode {
+  background-color: var(--bg-dark);
+  color: var(--txt-light);
+}
+
+.lightMode {
+  background-color: var(--bg-light);
+  color: var(--txt-dark);
+}
 /* ######## start nav ############## */
 .navbar {
     position: relative;

@@ -126,3 +126,14 @@
   grid-template-columns: 1fr;
 } 
 }
+h1 {
+  /* default (light mode) styles */
+  color: #222;
+  background: transparent;
+}
+
+/* Dark mode styles */
+.dark-mode h1 {
+  color: #fff;
+  background: #222;
+}

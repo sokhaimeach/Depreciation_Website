@@ -1,3 +1,30 @@
+:root {
+  --text-light: #ffffff;
+  --text-dark: #000000;
+  --bg-dark: #121212;
+  --bg-light: #ffffff;
+  --border-dark: #444;
+  --border-light: #ddd;
+}
+
+/* Add these dark mode text color fixes */
+.darkMode,
+.darkMode .menu-link,
+.darkMode .menu-mini-link,
+.darkMode .menu-bar h2,
+.darkMode span {
+  color: var(--text-light) !important;
+}
+
+.darkMode .show-data,
+.darkMode .show-data * {
+  color: var(--text-light) !important;
+}
+
+.darkMode .burger span {
+  background-color: var(--text-light) !important;
+}
+
 .loan1 {
   width: 100vw;
   height: 100vh;
@@ -8,7 +35,7 @@
   position: relative;
   transition: all 0.2s ease-out;
   padding: 20px;
-  color: black;
+  /* color: black; */
   backdrop-filter: blur(5px);
 }
 
@@ -74,20 +101,22 @@
 .mini-menu {
   display: none;
   padding: 0 20px;
-    width: 100vw;
-    height: 70px;
-    position: absolute;
-    justify-content: space-between;
-    align-items: center;
-    z-index: 1001;
-    left: 0;
-    bottom: 0;
-    background-color: white;
+  width: 100vw;
+  height: 70px;
+  position: absolute;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 1001;
+  left: 0;
+  bottom: 0;
+  background-color: white;
 }
+
 .menu-mini-link {
   font-size: 20px;
   border: none;
 }
+
 .mini-menu-bar {
   width: 150px;
   border-right: 1px solid black;
@@ -167,27 +196,32 @@
   .nav-update {
     padding: 0 15px;
   }
+
   .menu-link {
     padding: 0 10px;
   }
 }
+
 @media (max-width: 950px) {
   .nav-update {
     padding: 10px;
   }
 }
+
 @media (max-width: 810px) {
   .menu-link i {
     font-size: 20px;
   }
+
   .btn-resize {
     top: 5px;
     right: 0px;
   }
 }
+
 @media (max-width: 670px) {
   .nav-update {
-    padding:5px;
+    padding: 5px;
   }
 }
 
@@ -241,5 +275,68 @@
     position: relative;
     overflow: auto;
     z-index: 999;
+  }
+}
+
+.darkMode {
+  --bg-primary: #121212;
+  --bg-secondary: #1e1e1e;
+  --text-primary: #ffffff;
+  --border-color: #444;
+  --hover-bg: rgba(255, 255, 255, 0.1);
+}
+
+.lightMode {
+  --bg-primary: #ffffff;
+  --bg-secondary: #f5f5f5;
+  --text-primary: #000000;
+  --border-color: #ddd;
+  --hover-bg: rgba(0, 0, 0, 0.1);
+}
+
+/* Apply theme variables */
+.darkMode .nav-update,
+.darkMode .mini-menu {
+  background-color: var(--bg-secondary);
+  color: var(--text-primary);
+  border-color: var(--border-color);
+}
+
+.darkMode .show-data {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+}
+
+.darkMode .menu-bar {
+  border-bottom: 1px solid var(--border-color);
+}
+
+.darkMode .menu-link:hover,
+.darkMode .active {
+  background-color: var(--hover-bg);
+}
+
+.darkMode .menu-link i,
+.darkMode .menu-mini-link i {
+  color: var(--text-primary);
+}
+
+.darkMode .burger span {
+  background-color: var(--text-primary);
+}
+
+.darkMode .btn-resize {
+  color: var(--text-primary);
+}
+
+/* Responsive dark mode */
+@media (max-width: 600px) {
+  .darkMode .nav-update {
+    background-color: var(--bg-secondary);
+  }
+
+  .darkMode .mini-menu {
+    background-color: var(--bg-secondary);
+    border-top: 1px solid var(--border-color);
   }
 }
