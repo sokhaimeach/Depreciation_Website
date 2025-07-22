@@ -1,19 +1,20 @@
 :root {
-  --bg-dark: #121212;
-  --bg-light: #ffffff;
-  --txt-light: #ffffff;
-  --txt-dark: #000000;
+    --bg-dark: #121212;
+    --bg-light: #ffffff;
+    --txt-light: #ffffff;
+    --txt-dark: #000000;
 }
 
 .darkMode {
-  background-color: var(--bg-dark);
-  color: var(--txt-light);
+    background-color: var(--bg-dark);
+    color: var(--txt-light);
 }
 
 .lightMode {
-  background-color: var(--bg-light);
-  color: var(--txt-dark);
+    background-color: var(--bg-light);
+    color: var(--txt-dark);
 }
+
 /* ######## start nav ############## */
 .navbar {
     position: relative;
@@ -187,13 +188,16 @@
     .body {
         padding: 0px 10px;
     }
+
     .option-list {
         grid-template-rows: 90px 90px 50px;
         gap: 15px;
     }
+
     .option-box i {
-    font-size: 23px;
+        font-size: 23px;
     }
+
     .option-box span {
         font-size: 12px;
     }
@@ -202,52 +206,52 @@
 
 
 
-/* From Uiverse.io by Safvan-tsy */ 
+/* From Uiverse.io by Safvan-tsy */
 .radio-inputs {
-  position: relative;
-  display: flex;
-  flex-wrap: wrap;
-  border-radius: 4px;
-  background-color: black;
-  box-sizing: border-box;
-  padding: 0.25rem;
-  width: 340px;
-  font-size: 14px;
-  height: 46px;
-  transition: clip-path 0.3s ease;
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    border-radius: 4px;
+    background-color: black;
+    box-sizing: border-box;
+    padding: 0.25rem;
+    width: 340px;
+    font-size: 14px;
+    height: 46px;
+    transition: clip-path 0.3s ease;
 }
 
 .radio-inputs .radio {
-  flex: 1 1 auto;
-  text-align: center;
+    flex: 1 1 auto;
+    text-align: center;
 }
 
 .radio-inputs .radio input {
-  display: none;
+    display: none;
 }
 
 .radio-inputs .radio .radio-item {
-  display: flex;
-  cursor: pointer;
-  align-items: center;
-  justify-content: center;
-  border-radius: 4px;
-  border: none;
-  padding: 0.5rem 0;
-  color: #c2c1be;
-  transition:
-    background-color 0.5s ease,
-    font-weight 0.5s ease;
+    display: flex;
+    cursor: pointer;
+    align-items: center;
+    justify-content: center;
+    border-radius: 4px;
+    border: none;
+    padding: 0.5rem 0;
+    color: #c2c1be;
+    transition:
+        background-color 0.5s ease,
+        font-weight 0.5s ease;
 }
 
-.radio-inputs input:checked ~ .radio-item {
-  background-color: #4d4a45;
-  font-weight: 600;
-  color: #fff;
+.radio-inputs input:checked~.radio-item {
+    background-color: #4d4a45;
+    font-weight: 600;
+    color: #fff;
 }
 
-.radio-inputs input:checked ~ .radio {
-  clip-path: polygon(0% 0%, 100% 0%, 90% 100%, 10% 100%);
+.radio-inputs input:checked~.radio {
+    clip-path: polygon(0% 0%, 100% 0%, 90% 100%, 10% 100%);
 }
 
 
@@ -263,4 +267,98 @@
     color: var(--txt-dark);
     height: 100vh;
     /* width: 100%; */
+}
+
+.offcanvas {
+    width: 320px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.offcanvas-header {
+    padding: 1rem 1.5rem;
+}
+
+.offcanvas-body {
+    padding: 0;
+}
+
+.list-group-item {
+    border-left: 0;
+    border-right: 0;
+    padding: 1rem 1.5rem;
+}
+
+.btn-group .btn {
+    flex: 1;
+    padding: 0.5rem;
+}
+
+.form-switch .form-check-input {
+    width: 3em;
+    height: 1.5em;
+    cursor: pointer;
+    margin-right: 0.5rem;
+}
+
+/* Dark mode specific styles */
+.darkMode .offcanvas {
+    background-color: #1e1e1e;
+    color: #ffffff;
+}
+
+.darkMode .list-group-item {
+    background-color: #1e1e1e;
+    border-color: #333;
+}
+
+.darkMode .btn-close {
+    filter: invert(1);
+}
+
+.darkMode .btn-outline-primary {
+    color: #a6c1ee;
+    border-color: #3a5a8a;
+}
+
+.darkMode .btn-outline-primary.active {
+    background-color: #3a5a8a;
+    color: white;
+}
+
+/* Icon animations */
+.bi-gear-fill {
+    animation: spin 4s linear infinite;
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* Add these styles to ensure text color changes in dark mode */
+.darkMode {
+    background-color: var(--bg-dark);
+    color: var(--txt-light) !important;
+    /* Add !important to override other styles */
+}
+
+.darkMode .offcanvas-title,
+.darkMode .list-group-item,
+.darkMode .btn-outline-primary,
+.darkMode .form-check-label {
+    color: var(--txt-light) !important;
+}
+
+.darkMode .btn-outline-primary.active {
+    color: white !important;
+}
+
+/* Ensure the offcanvas background is dark */
+.darkMode .offcanvas {
+    background-color: var(--bg-dark);
 }

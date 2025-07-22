@@ -31,22 +31,54 @@
 
 
     <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
-        <div class="offcanvas-header">
-            <h5 class="offcanvas-title" id="offcanvasRightLabel">Settings</h5>
+        <div class="offcanvas-header border-bottom">
+            <h5 class="offcanvas-title fw-bold" id="offcanvasRightLabel">
+                <i class="bi bi-gear-fill me-2"></i>Settings
+            </h5>
             <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
         </div>
-        <div class="offcanvas-body">
-            <div class="radio-inputs">
-                <label class="radio" (click)="switchLanguage('en')">
-                    <input checked="" name="auth" type="radio" />
-                    <span class="radio-item">English</span>
-                </label>
-                <label class="radio" (click)="switchLanguage('km')">
-                    <input name="auth" type="radio" />
-                    <span class="radio-item">Khmer</span>
-                </label>
+        <div class="offcanvas-body p-0">
+            <div class="list-group list-group-flush">
+                <!-- Language Selector -->
+                <div class="list-group-item py-3">
+                    <h6 class="mb-3 fw-semibold">
+                        <i class="bi bi-translate me-2"></i>Language
+                    </h6>
+                    <div class="btn-group w-100" role="group">
+                        <button type="button"
+                            class="btn btn-outline-primary d-flex align-items-center justify-content-center gap-2"
+                            [class.active]="currentLanguage === 'en'" (click)="switchLanguage('en')">
+                            <i class="bi bi-translate"></i> English
+                        </button>
+                        <button type="button"
+                            class="btn btn-outline-primary d-flex align-items-center justify-content-center gap-2"
+                            [class.active]="currentLanguage === 'km'" (click)="switchLanguage('km')">
+                            <i class="bi bi-translate"></i> ភាសាខ្មែរ
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Theme Toggle -->
+                <div class="list-group-item py-3">
+                    <h6 class="mb-3 fw-semibold">
+                        <i class="bi bi-sun-fill me-2"></i>Theme
+                    </h6>
+                    <div class="d-flex align-items-center justify-content-between">
+                        <div class="form-check form-switch mb-0">
+                            <input class="form-check-input" type="checkbox" role="switch" id="themeSwitch"
+                                [checked]="themeService.theme() === 'darkMode'" (change)="toggleTheme()">
+                            <label class="form-check-label" for="themeSwitch">
+                                {{ themeService.theme() === 'darkMode' ? 'Dark' : 'Light' }} Mode
+                            </label>
+                        </div>
+                        <span class="ms-3">
+                            <i *ngIf="themeService.theme() === 'darkMode'"
+                                class="bi bi-moon-stars-fill text-warning fs-5"></i>
+                            <i *ngIf="themeService.theme() !== 'darkMode'" class="bi bi-sun-fill text-warning fs-5"></i>
+                        </span>
+                    </div>
+                </div>
             </div>
-            <button (click)="toggleTheme()" style="z-index: 100;">Mode</button>
         </div>
     </div>
 </div>

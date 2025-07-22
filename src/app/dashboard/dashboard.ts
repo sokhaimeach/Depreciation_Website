@@ -29,7 +29,7 @@ export class Dashboard {
       icon: 'bi bi-cash-coin',
       link: '/menu/loan3',
     },
-    { id: 4, title: 'Scores', icon: 'bi bi-journal-album' },
+    { id: 4, title: 'Description', icon: 'bi bi-journal-album' },
     { id: 5, title: 'Teachers', icon: 'bi bi-person-workspace' },
     { id: 6, title: 'Class', icon: 'bi bi-buildings' },
     { id: 7, title: 'Member', icon: 'bi bi-person-vcard' },
