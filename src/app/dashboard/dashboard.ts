@@ -19,8 +19,8 @@ export class Dashboard {
     {id: 4, title: 'Scores', icon: 'bi bi-journal-album'},
     {id: 5, title: 'Teachers', icon: 'bi bi-person-workspace'},
     {id: 6, title: 'Class', icon: 'bi bi-buildings'},
-    {id: 7, title: 'Account', icon: 'bi bi-person-vcard'},
-    {id: 8, title: 'Loign', icon: 'bi bi-person', link: '/login'}
+    {id: 7, title: 'Member', icon: 'bi bi-person-vcard'},
+    {id: 8, title: 'Log out', icon: 'bi bi-person', link: '/login'}
   ]
 
   isLogin() {
@@ -46,8 +46,8 @@ export class Dashboard {
   }
   changeLanguage() {
     const translation = {
-      en: ['Loan fix', 'Loan fix principal','Loan principal 3m','Scores','Teachers','Class','Account','Loign'],
-      km: ['ការប្រាក់ថេរ', 'ការប្រាក់ថយ','រំលោះ៣ខែម្ដង','ពិន្ទុ','គ្រូបង្រៀន','ថ្នាក់','គណនី','ចូលទៅ']
+      en: ['Loan fix', 'Loan fix principal','Loan principal 3m','Scores','Teachers','Class','Member','Log out'],
+      km: ['ការប្រាក់ថេរ', 'ការប្រាក់ថយ','រំលោះ៣ខែម្ដង','ពិន្ទុ','គ្រូបង្រៀន','ថ្នាក់','គណនី','ចាកចេញ']
     }
 
     translation[this.currentLanguage].map((text, index) => {

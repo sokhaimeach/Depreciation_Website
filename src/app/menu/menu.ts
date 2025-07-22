@@ -16,8 +16,8 @@ export class Menu {
     {link: '/menu/dashboard', title: 'Description', icon: 'bi bi-journal-album'},
     {link: '/menu/dashboard', title: 'Dashboard', icon: 'bi bi-person-workspace'},
     {link: '/menu/dashboard', title: 'Dashboard', icon: 'bi bi-buildings'},
-    {link: '/menu/dashboard', title: 'Dashboard', icon: 'bi bi-currency-dollar'},
-    {link: '/menu/dashboard', title: 'Dashboard', icon: 'bi bi-currency-dollar'},
+    {link: '/menu/members', title: 'Members', icon: 'bi bi-people'},
+    {link: '/login', title: 'Log out', icon: 'bi bi-person'},
   ]
 
   col_update = signal('col-3 nav-update');

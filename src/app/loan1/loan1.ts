@@ -1,6 +1,8 @@
 import { CommonModule } from '@angular/common';
 import { Component, signal, effect } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { jsPDF } from 'jspdf';
+import html2canvas from 'html2canvas';
 
 @Component({
   selector: 'app-loan1',
@@ -22,6 +24,7 @@ export class Loan1 {
   }
 
   // design path
+  loan_title: string = 'Depreciation Fix'
   data = [
     { name: 'Principal', value: this.principal, color: '#ffa9a9', icon: 'bi bi-currency-dollar' },
     { name: 'Interest Rate', value: this.interestRate, color: '#9797ff', icon: 'bi bi-percent' },
@@ -40,6 +43,10 @@ export class Loan1 {
       arrcolor[i] = i%2==0? 'rgb(255, 255, 255)': '#9797ff';
     }
     return arrcolor;
+  }
+  msg_top: string = '-100px';
+  clearMessage() {
+    this.msg_top = '-100px'
   }
 
 
@@ -88,5 +95,34 @@ export class Loan1 {
     this.data[2].value = this.duration;
     this.data[3].value = this.date;
     this.calculate();
+
+    // alert success message
+    if((this.getPrincial || this.getInterestRate || this.getDuration || this.getDate) != '') {
+      const radio = new Audio()
+      radio.src = 'images/message_sound.mp3';
+      radio.play();
+      this.msg_top = '20px';
+    }
+  }
+
+  generatePDF() {
+    const element = document.getElementById('content');
+    
+    if(!element) return;
+    html2canvas(element, {scale: 3, useCORS: true}).then((canvas) => {
+      const pdf = new jsPDF('landscape', 'mm', 'a4');
+      const img = canvas.toDataURL('image/png');
+      const pdfWidth = pdf.internal.pageSize.getWidth();
+      const pdfHeight = (canvas.height * pdfWidth) / canvas.width;
+
+      pdf.addImage(img, 'PNG', 0, 0, pdfWidth, pdfHeight);
+      // pdf.setProperties({
+      //   title: 'Loan depreciation'
+      // })
+      // pdf.setFontSize(12);
+      // pdf.text('sokhai meach', 14, 22);
+
+      pdf.save('depreciation.pdf');
+    })
   }
 }
