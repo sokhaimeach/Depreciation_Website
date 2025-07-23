@@ -1,5 +1,5 @@
 :root {
-    --bg-dark: #2d2d2d;
+    --bg-dark: #404040;
     --bg-light: #ffffff;
     --txt-light: #ffffff;
     --txt-dark: #000000;
@@ -302,13 +302,13 @@
 
 /* Dark mode specific styles */
 .darkMode .offcanvas {
-    background-color: #1e1e1e;
+    background-color: #1a1a1a;
     color: #ffffff;
 }
 
 .darkMode .list-group-item {
-    background-color: #1e1e1e;
-    border-color: #333;
+    background-color: #313131;
+    border-color: #1c1c1c;
 }
 
 .darkMode .btn-close {

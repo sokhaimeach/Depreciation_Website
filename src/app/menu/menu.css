@@ -22,7 +22,7 @@
 }
 
 .darkMode .burger span {
-  background-color: var(--text-light) !important;
+  background-color: var(--bg-light) !important;
 }
 
 .loan1 {
@@ -147,7 +147,7 @@
   position: absolute;
   height: 4px;
   width: 100%;
-  background: black;
+  background: rgb(87, 87, 87);
   border-radius: 9px;
   opacity: 1;
   left: 0;

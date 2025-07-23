@@ -31,7 +31,8 @@ export class Menu {
 
   constructor(public themeService: ThemeService) {
     try {
-      this.activeLink = JSON.parse(sessionStorage.getItem('setActiveStatus') || "[]") || [];
+      // this.activeLink = JSON.parse(sessionStorage.getItem('setActiveStatus') || "[]") || [];
+      this.activeLink = typeof window !== 'undefined' ? JSON.parse(sessionStorage.getItem('setActiveStatus') || "[]") : [];
     } catch (e) {
       console.error('Error parsing active link state:', e);
       this.activeLink = [];
