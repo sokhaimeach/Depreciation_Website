@@ -1,0 +1,19 @@
+<h2 class="my-3 animate__animated animate__fadeInDown">Classes</h2>
+<table class="table table-striped table-bordered animate__animated animate__fadeInUp">
+    <thead class="table-dark">
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Room</th>
+        </tr>
+    </thead>
+    <tbody>
+        @for(cls of classes; track $index){
+        <tr>
+            <td>{{ cls.id }}</td>
+            <td>{{ cls.name }}</td>
+            <td>{{ cls.room }}</td>
+        </tr>
+        }
+    </tbody>
+</table>

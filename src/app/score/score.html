@@ -1,0 +1,19 @@
+<h2 class="my-3 animate__animated animate__fadeInDown">Student Scores</h2>
+<table class="table table-striped table-bordered animate__animated animate__fadeInUp">
+    <thead class="table-dark">
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Score</th>
+        </tr>
+    </thead>
+    <tbody>
+        @for(student of students; track $index){
+        <tr>
+            <td>{{ student.id }}</td>
+            <td>{{ student.name }}</td>
+            <td>{{ student.score }}</td>
+        </tr>
+        }
+    </tbody>
+</table>

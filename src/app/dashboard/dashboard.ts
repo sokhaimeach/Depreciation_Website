@@ -29,10 +29,10 @@ export class Dashboard {
       icon: 'bi bi-cash-coin',
       link: '/menu/loan3',
     },
-    { id: 4, title: 'Description', icon: 'bi bi-journal-album' },
-    { id: 5, title: 'Teachers', icon: 'bi bi-person-workspace' },
-    { id: 6, title: 'Class', icon: 'bi bi-buildings' },
-    { id: 7, title: 'Member', icon: 'bi bi-person-vcard' },
+    { id: 4, title: 'Score', icon: 'bi bi-journal-album', link: '/menu/score'},
+    { id: 5, title: 'Teachers', icon: 'bi bi-person-workspace', link: '/menu/teacher' },
+    { id: 6, title: 'Class', icon: 'bi bi-buildings',  link: '/menu/classes'},
+    { id: 7, title: 'Member', icon: 'bi bi-person-vcard', link: '/menu/members' },
     { id: 8, title: 'Log out', icon: 'bi bi-person', link: '/login' },
   ];
 

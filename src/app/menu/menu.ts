@@ -16,9 +16,9 @@ export class Menu {
     { link: '/menu/loan1', title: 'Loan1', icon: 'bi bi-currency-dollar' },
     { link: '/menu/loan2', title: 'Loan2', icon: 'bi bi-coin' },
     { link: '/menu/loan3', title: 'Loan3', icon: 'bi bi-cash-coin' },
-    { link: '/menu/dashboard', title: 'Description', icon: 'bi bi-journal-album' },
-    { link: '/menu/dashboard', title: 'Dashboard', icon: 'bi bi-person-workspace' },
-    { link: '/menu/dashboard', title: 'Class', icon: 'bi bi-buildings' },
+    { link: '/menu/score', title: 'Score', icon: 'bi bi-journal-album' },
+    { link: '/menu/teacher', title: 'Teacher', icon: 'bi bi-person-workspace' },
+    { link: '/menu/classes', title: 'Class', icon: 'bi bi-buildings' },
     { link: '/menu/members', title: 'Members', icon: 'bi bi-people' },
     { link: '/login', title: 'Log out', icon: 'bi bi-person' },
   ];
