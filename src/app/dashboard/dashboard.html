@@ -72,11 +72,9 @@
                             </label>
                         </div>
                         <span class="ms-3">
-                            @if(themeService.theme() === 'darkMode'){
-                                <i class="bi bi-moon-stars-fill text-warning fs-5"></i>
-                            } @else {
-                                <i class="bi bi-sun-fill text-warning fs-5"></i>
-                            }
+                            <i *ngIf="themeService.theme() === 'darkMode'"
+                                class="bi bi-moon-stars-fill text-warning fs-5"></i>
+                            <i *ngIf="themeService.theme() !== 'darkMode'" class="bi bi-sun-fill text-warning fs-5"></i>
                         </span>
                     </div>
                 </div>
