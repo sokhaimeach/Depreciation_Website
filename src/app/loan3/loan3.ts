@@ -1,8 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component, signal } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { jsPDF } from 'jspdf';
-import html2canvas from 'html2canvas';
 
 @Component({
   selector: 'app-loan3',
@@ -70,10 +68,10 @@ export class Loan3 {
 
       let monthlyInterest = newprincipal * this.interestRate / 100;
       if((i+1)%3==1) {
-        principal_per_month = (i==duration-1) ? principal*2 : 0;
+        principal_per_month = (i==duration-1) ? principal*1 : 0;
         newprincipal -= principal_per_month;
       } else if((i+1)%3==2){
-        principal_per_month = (i==duration-1) ? principal*1 : 0;
+        principal_per_month = (i==duration-1) ? principal*2 : 0;
         newprincipal -= principal_per_month;
       } else {
         principal_per_month = principal * 3;
@@ -115,24 +113,5 @@ export class Loan3 {
       radio.play();
       this.msg_top = '20px';
     }
-  }
-
-  generatePDF() {
-    const element = document.getElementById('content');
-    
-    if(!element) return;
-    html2canvas(element, {scale: 2}).then((canvas) => {
-      const pdf = new jsPDF('p', 'mm', 'a4');
-      const img = canvas.toDataURL('image/png');
-
-      pdf.addImage(img, 'PNG', 0, 0, 211, 298);
-      pdf.setProperties({
-        title: 'Loan depreciation'
-      })
-      pdf.setFontSize(12);
-      pdf.text('sokhai meach', 14, 22);
-
-      pdf.save('depreciation.pdf');
-    })
   }
 }

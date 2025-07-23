@@ -1,8 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component, signal, effect } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { jsPDF } from 'jspdf';
-import html2canvas from 'html2canvas';
 
 @Component({
   selector: 'app-loan1',
@@ -103,26 +101,5 @@ export class Loan1 {
       radio.play();
       this.msg_top = '20px';
     }
-  }
-
-  generatePDF() {
-    const element = document.getElementById('content');
-    
-    if(!element) return;
-    html2canvas(element, {scale: 3, useCORS: true}).then((canvas) => {
-      const pdf = new jsPDF('landscape', 'mm', 'a4');
-      const img = canvas.toDataURL('image/png');
-      const pdfWidth = pdf.internal.pageSize.getWidth();
-      const pdfHeight = (canvas.height * pdfWidth) / canvas.width;
-
-      pdf.addImage(img, 'PNG', 0, 0, pdfWidth, pdfHeight);
-      // pdf.setProperties({
-      //   title: 'Loan depreciation'
-      // })
-      // pdf.setFontSize(12);
-      // pdf.text('sokhai meach', 14, 22);
-
-      pdf.save('depreciation.pdf');
-    })
   }
 }
